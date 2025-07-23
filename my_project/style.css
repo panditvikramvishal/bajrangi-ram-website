@@ -1,0 +1,408 @@
+/* डिफ़ॉल्ट मार्जिन/पैडिंग हटाएं */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box; /* पैडिंग और बॉर्डर को चौड़ाई और ऊंचाई में शामिल करता है */
+    font-family: Arial, sans-serif; /* एक डिफ़ॉल्ट फॉन्ट सेट करें */
+    line-height: 1.6;
+    color: #ff9409;
+    overflow-x: hidden; /* हॉरिजॉन्टल स्क्रॉल बार से बचें */
+}
+
+/* हेडर/मेनू बार स्टाइलिंग */
+header {
+    background-color: #300505;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eefd18;
+    flex-wrap: wrap; /* छोटे स्क्रीन पर तत्वों को अगली लाइन में जाने दें */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* हेडर कंटेंट को पूरी चौड़ाई लेने दें */
+    flex-wrap: wrap;
+}
+
+.header-content h1 {
+    margin: 0;
+    color: #fcf161;
+    flex-shrink: 0; /* सिकुड़ने से रोकें */
+}
+
+.header-content nav {
+    flex-grow: 1; /* नेविगेशन को उपलब्ध स्थान लेने दें */
+    text-align: center; /* नेविगेशन लिंक्स को सेंटर में करें */
+}
+
+.header-content nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* लिंक्स को सेंटर में करें */
+    flex-wrap: wrap;
+}
+
+.header-content nav ul li {
+    margin: 0 15px; /* लिंक्स के बीच की जगह */
+}
+
+.header-content nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.header-content nav ul li a:hover {
+    color: #0056b3;
+}
+
+/* हेडर के दाईं ओर का सेक्शन */
+.header-right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* तत्वों के बीच की जगह */
+    flex-shrink: 0; /* सिकुड़ने से रोकें */
+    margin-left: auto; /* इसे दाईं ओर धकेलें */
+    flex-wrap: wrap; /* छोटे स्क्रीन पर तत्वों को अगली लाइन में जाने दें */
+    justify-content: flex-end; /* छोटे स्क्रीन पर दाईं ओर अलाइन करें */
+}
+
+.search-section {
+    display: flex; /* इनपुट और बटन को एक लाइन में रखें */
+    gap: 5px;
+    align-items: center;
+}
+
+.search-section input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ff9d09;
+    border-radius: 4px;
+    width: 150px; /* सर्च इनपुट की चौड़ाई */
+}
+
+.search-section button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: rgb(255, 180, 180);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-section button:hover {
+    background-color: #0056b3;
+}
+
+/* वॉलेट जानकारी */
+.wallet-info {
+    font-weight: bold;
+    color: #f8bf01;
+    white-space: nowrap; /* टेक्स्ट को एक लाइन में रखें */
+}
+
+/* कॉल बटन स्टाइलिंग */
+.call-button {
+    background-color: #28a745; /* हरा रंग */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex; /* आइकन और टेक्स्ट को एक लाइन में रखें */
+    align-items: center;
+    gap: 8px; /* आइकन और टेक्स्ट के बीच की जगह */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* टेक्स्ट को एक लाइन में रखें */
+}
+
+.call-button:hover {
+    background-color: #218838; /* होवर पर गहरा हरा */
+}
+
+/* Font Awesome आइकन के लिए */
+.call-button i {
+    font-size: 1.2em;
+}
+
+/* बैनर/स्लाइडर सेक्शन स्टाइलिंग */
+.banner-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-container {
+    max-width: 1000px; /* स्लाइडर की अधिकतम चौड़ाई नियंत्रित करें */
+    position: relative;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides {
+    display: none; /* डिफ़ॉल्ट रूप से छुपाएं */
+}
+
+.mySlides img {
+    width: 100%;
+    height: 400px; /* बैनर की ऊंचाई नियंत्रित करें */
+    object-fit: cover; /* इमेज को कंटेनर को भरने के लिए क्रॉप करें */
+    vertical-align: middle;
+}
+
+/* पिछले और अगले बटन */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2; /* बटनों को इमेज के ऊपर रखें */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* डॉट्स/बुलेट्स कंटेनर */
+.dot-container {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+/* डॉट्स */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* फेड एनीमेशन */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* YouTube वीडियो सेक्शन स्टाइलिंग */
+.youtube-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.youtube-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.video-item h3 {
+    font-size: 1.3em;
+    color: #007bff;
+    margin: 15px 15px 10px 15px;
+    line-height: 1.4;
+}
+
+.video-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0 15px 15px 15px;
+    line-height: 1.6;
+}
+
+/* सामान्य सामग्री क्षेत्र */
+.content-area {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.content-area h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-area p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* फुटर स्टाइलिंग */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+
+/* मोबाइल रिस्पॉन्सिवनेस (सभी सेक्शन्स के लिए) */
+@media screen and (max-width: 768px) {
+    /* हेडर रिस्पॉन्सिवनेस */
+    header {
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-content h1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .header-content nav {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .header-content nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content nav ul li {
+        margin: 5px 0;
+    }
+
+    .header-right-section {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        gap: 10px;
+    }
+
+    .search-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-section input[type="text"] {
+        width: 70%;
+    }
+
+    .wallet-info, .call-button {
+        width: auto;
+    }
+
+    /* बैनर/स्लाइडर रिस्पॉन्सिवनेस */
+    .mySlides img {
+        height: 250px; /* छोटे स्क्रीन के लिए ऊंचाई कम करें */
+    }
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .dot-container {
+        padding: 10px;
+    }
+
+    /* YouTube सेक्शन रिस्पॉन्सिवनेस */
+    .youtube-section {
+        padding: 30px 15px;
+    }
+
+    .youtube-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr; /* छोटे स्क्रीन पर एक ही कॉलम में दिखाएं */
+    }
+
+    .video-item img {
+        height: 180px; /* मोबाइल पर थंबनेल की ऊंचाई कम करें */
+    }
+
+    .video-item h3 {
+        font-size: 1.2em;
+    }
+
+    /* सामान्य सामग्री क्षेत्र रिस्पॉन्सिवनेस */
+    .content-area {
+        padding: 30px 15px;
+    }
+}
+
